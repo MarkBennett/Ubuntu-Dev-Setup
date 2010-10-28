@@ -14,7 +14,7 @@ Install Ubuntu Packages
 
 I install a basic set of packages on all my Ubuntu development boxes.
 
-    sudo aptitude install build-essential bison openssl libreadline5 libreadline-dev curl git-core zlib1g zlib1g-dev libssl-dev vim libsqlite3-0 libsqlite3-dev sqlite3 libreadline-dev libxml2-dev git-core subversion autoconf vim-gnome vim-ruby
+    sudo aptitude install build-essential bison openssl libreadline5 libreadline-dev curl git-core zlib1g zlib1g-dev libssl-dev vim libsqlite3-0 libsqlite3-dev sqlite3 libreadline-dev libxml2-dev git-core subversion autoconf vim-gnome vim-ruby openssh-client
 
 Install Ruby
 -------------
@@ -73,6 +73,32 @@ Paste the following to set my git status in the prompt:
         PS1='\w$(parse_git_branch)\[\e[0m\]: '
         ;;
     esac
+
+Configure SSH
+--------------
+
+I like to setup SSH aliases on all my boxes.
+
+    mkdir ~/.ssh
+    chmod 700 ~/.ssh
+    touch ~/.ssh/config
+    chmod 644 ~/.ssh/config
+
+The contents of ~/.ssh/config look like this:
+
+    Host yegtrash
+      Hostname 67.23.25.157
+      User yegtrash
+
+    Host litdistco-dev
+      Hostname litdistco-dev
+      User mark
+
+    Host burmis
+      Hostname burmis.ca
+      User mark
+      Port 6275
+
 
 Conclusion
 -----------
